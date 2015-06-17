@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "ViewPatient";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet"/>
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>View all Patients</h2>
+        <label><a href="/Patient/Index">Patient page</a></label>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>PatientId</td>
+                    <td>HospitalId</td>
+                    <td>DoctorId</td>
+                    <td>Name</td>
+                    <td>Gender</td>
+                    <td>Age</td>
+                    <td>Disease</td>
+                    <td>City</td>
+                    <td>District</td>
+                    <td>Country</td>
+                    <td>EmailId</td>
+                    <td>PhoneNo</td>
+                    <td>PatientPicture</td>
+                 </tr>
+                </thead>
+            <tbody>
+
+                   @foreach (Practice1.Models.Patient p in ViewBag.Patients)
+                    
+                   {
+
+                    <tr class="alert-success">
+                        <td> @p.Id</td>
+                        <td> @p.HospitalId</td>
+                        <td> @p.DoctorID</td>
+                        <td> @p.name</td>
+                        <td> @p.gender</td>
+                        <td> @p.age</td>
+                        <td> @p.disease</td>
+                        <td> @p.city</td>
+                        <td> @p.district</td>
+                        <td> @p.country</td>
+                        <td> @p.email</td>
+                        <td> @p.phone</td>
+                        <td><img src="~/images/@p.PPicture" width="100" height="100" /></td>
+
+                    </tr>
+                   }
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>

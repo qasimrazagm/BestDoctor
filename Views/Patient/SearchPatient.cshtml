@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "SearchPatient";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Resultent Patient</h2>
+        <label><a href="/Patient/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="alert ">
+                    <td>PatientId</td>
+                    <td>HospitalId</td>
+                    <td>DoctorId</td>
+                    <td>Name</td>
+                    <td>Gender</td>
+                    <td>Age</td>
+                    <td>Disease</td>
+                    <td>City</td>
+                    <td>District</td>
+                    <td>Country</td>
+                    <td>EmailId</td>
+                    <td>PhoneNo</td>
+                   <td>PPicture</td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr class=" alert-danger">
+                        <td> @Model.Id</td>
+                        <td> @Model.HospitalId</td>
+                        <td> @Model.DoctorID</td>
+                        <td> @Model.name</td>
+                        <td> @Model.gender</td>
+                        <td> @Model.age</td>
+                        <td> @Model.disease</td>
+                        <td> @Model.city</td>
+                        <td> @Model.district</td>
+                        <td> @Model.country</td>
+                        <td> @Model.email</td>
+                        <td> @Model.phone</td>
+                        <td><img src="~/images/@Model.PPicture" width="100" height="100" /></td>
+                    </tr>
+            </tbody>
+        </table>
+        <h1>@ViewBag.PError</h1>
+
+    </div>
+</body>
+
+</html>

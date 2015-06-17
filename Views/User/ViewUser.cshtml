@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "ViewUser";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>View all User</h2>
+        <label><a href="/ User/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <table class="table tablesorter tabs_involved">
+            <thead>
+                <tr>
+                    <td>UserId</td>
+                    <td>Name</td>
+                    <td>Password</td>
+                    <td>Picture</td>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Practice1.Models.User dr in ViewBag.Users)
+                {
+                    <tr>
+                        <td> @dr.Id</td>
+                        <td> @dr.name</td>
+                        <td> @dr.password</td>
+                        <td> @dr.UPicture</td>
+                        <td><img src="~/images/@dr.UPicture" width="100" height="100" /></td>
+                    </tr>
+                }
+           </tbody>
+        </table>
+    </div>
+</body>
+</html>

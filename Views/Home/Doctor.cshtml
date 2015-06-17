@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Doctor";
+}
+@using Practice1.Models
+@model List<Practice1.Models.Doctor>
+<html>
+
+<head>
+    <title></title>
+
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2> Doctors</h2>
+        <label><a href="/Home/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <form action="/Home/Search" method="post" role="form">
+            @foreach (var d in Model)
+            {
+                <h1> Doctors against Hospital</h1>
+                <table class=" table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>DoctorId</td>
+                            <td>HospitalId</td>
+                            <td>DoctorName</td>
+                            <td>specialization</td>
+                            <td>age</td>
+                            <td>gender</td>
+                            <td>timing</td>
+                            <td>city</td>
+                            <td>country</td>
+                            <td>email</td>
+                            <td>phone</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                          
+                        <tr class="alert-danger">
+                            <td> @d.Id</td>
+                            <td> @d.HospitalId</td>
+                            <td> @d.name</td>
+                            <td> @d.specialization</td>
+                            <td> @d.age</td>
+                            <td> @d.gender</td>
+                            <td> @d.timing</td>
+                            <td> @d.city</td>
+                            <td> @d.country</td>
+                            <td> @d.email</td>
+                            <td> @d.phone</td>
+
+                        </tr>
+                  
+                    </tbody>
+                </table>
+                <h1>Hospital</h1>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>HospitalId</td>
+                            <td>HospitalName</td>
+                            <td>City</td>
+                            <td>District</td>
+                            <td>Country</td>
+                            <td>Timing</td>
+                            <td>Website</td>
+                            <td>Email</td>
+                            <td>Phone</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="alert_success">
+                            <td> @d.Hospital.Id</td>
+                            <td> @d.Hospital.name</td>
+                            <td> @d.Hospital.city</td>
+                            <td> @d.Hospital.district</td>
+                            <td> @d.Hospital.country</td>
+                            <td> @d.Hospital.timing</td>
+                            <td> @d.Hospital.email</td>
+                            <td> @d.Hospital.website</td>
+                            <td> @d.Hospital.phone</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h1>Patients against Doctor</h1>
+                <table class=" table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>PatientId</td>
+                            <td>HospitalId</td>
+                            <td>DoctorId</td>
+                            <td>Name</td>
+                            <td>Gender</td>
+                            <td>Age</td>
+                            <td>Disease</td>
+                            <td>City</td>
+                            <td>District</td>
+                            <td>Country</td>
+                            <td>EmailId</td>
+                            <td>PhoneNo</td>
+                            <td>HospitalPicture</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Patient p in d.Patients)
+                        {
+
+                            <tr class="alert-info">
+                                <td> @p.Id</td>
+                                <td> @p.HospitalId</td>
+                                <td> @p.DoctorID</td>
+                                <td> @p.name</td>
+                                <td> @p.gender</td>
+                                <td> @p.age</td>
+                                <td> @p.disease</td>
+                                <td> @p.city</td>
+                                <td> @p.district</td>
+                                <td> @p.country</td>
+                                <td> @p.email</td>
+                                <td> @p.phone</td>
+                                <td> @p.PPicture</td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+                
+            }
+
+
+            <div class="form-group">
+                <button type="submit" name="btnadd" class="btn btn-primary">Don</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

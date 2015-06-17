@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Update";
+}
+
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Update a Doctor</h2>
+        <label><a href="/Doctor/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <form action="/Doctor/UpdateDoctor" method="post" role="form">
+            <h3>Please provide the new Information and ID of the Doctor</h3>
+            <div class="form-group">
+                <label>HospitalId: </label>
+                <input type="text" name="HospitalId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Name: </label>
+                <input type="text" name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Specialization: </label>
+                <input type="text" name="specialization" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Age: </label>
+                <input type="text" name="age" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Gender: </label>
+                <input type="text" name="gender" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>City: </label>
+                <input type="text" name="city" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>District: </label>
+                <input type="text" name="district" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Country: </label>
+                <input type="text" name="country" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Email: </label>
+                <input type="text" name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Phone: </label>
+                <input type="tel" name="phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnadd" class="btn btn-primary">Update Doctor</button>
+            </div>
+        </form>
+        <h1>@ViewBag.Error</h1>
+    </div>
+</body>
+
+</html>
+

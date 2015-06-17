@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Delete";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Delete a Admin</h2>
+        <label><a href="/Admin/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <form action="/Staff/DeleteAdmin" method="post" role="form">
+            <div class="form-group">
+                <label>Admin ID: </label>
+                <input type="number" name="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnadd" class="btn btn-primary">Delete Admin</button>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

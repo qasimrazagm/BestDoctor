@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "ViewDoctor";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>View all Doctors</h2>
+        <label><a href="/Doctor/Index">Home page</a></label>
+    </div>
+
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>DoctorId</td>
+                    <td>HospitalId</td>
+                    <td>DoctorName</td>
+                    <td>specialization</td>
+                    <td>age</td>
+                    <td>gender</td>
+                    <td>timing</td>
+                    <td>city</td>
+                    <td>country</td>
+                    <td>email</td>
+                    <td>phone</td>
+                    <td>Doctorimg</td>
+                 </tr>
+                </thead>
+                <tbody>           
+
+                    @foreach (Practice1.Models.Doctor dr in ViewBag.Doctors)
+                    {
+                            <tr class="alert-success">
+                                <td> @dr.Id</td>
+                                <td> @dr.HospitalId</td>
+                                <td> @dr.name</td>
+                                <td> @dr.specialization</td>
+                                <td> @dr.age</td>
+                                <td> @dr.gender</td>
+                                <td>@dr.timing</td>
+                                <td> @dr.city</td>
+                                <td> @dr.country</td>
+                                <td> @dr.email</td>
+                                <td> @dr.phone</td>
+                                <td><img src="/images/@dr.DPicture" width="100" height="100" /></td>
+                           
+                            </tr>
+                    }
+             </tbody>
+      </table>
+                        
+                    
+</div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Main/Index">LogOUt</a>
+        </li>
+    </ul>
+    <div class="container">
+        <h2>Please Select a Operation from below..</h2>
+        <ul style="padding-left:500px">
+            <li><a href="/Patient/Add">Add Patient <br /><br /></a></li>
+            <li><a href="/Patient/Delete">Delete Patient<br /><br /></a></li>
+            <li><a href="/Patient/Update">Update Patient<br /><br /></a></li>
+            <li><a href="/Patient/Search">Search Patient<br /><br /></a></li>
+            <li><a href="/Patient/ViewPatient">View Patient<br /><br /></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

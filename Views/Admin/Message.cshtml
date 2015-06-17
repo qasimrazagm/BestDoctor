@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Message";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>View all Messages</h2>
+        <label><a href="/Admin/Index">Home page</a></label>
+    </div>
+
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>MessageId</td>
+                    <td>Message</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Practice1.Models.Message dr in ViewBag.Messages)
+                {
+                    <tr class="alert-success">
+                        <td> @dr.Id</td>
+                        <td> @dr.message1</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+   </html>

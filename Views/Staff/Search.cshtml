@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+<<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Search a Admin</h2>
+    </div>
+    <div class="container">
+        <form action="/Staff/Search" method="post" role="form">
+            <div class="form-group">
+                <label>Admin ID: </label>
+                <input type="number" name="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnadd" class="btn btn-primary">Search Admin</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

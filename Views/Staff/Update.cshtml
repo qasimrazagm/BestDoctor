@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Update";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Update a Admin</h2>
+        <label><a href="/Staff/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <form action="/Staff/UpdateAdmin" method="post" role="form">
+            <h3>Please provide the new Information and ID of the Hospital</h3>
+            <div class="form-group">
+                <label>Id: </label>
+                <input type="text" name="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>name: </label>
+                <input type="text" name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>password: </label>
+                <input type="text" name="password" class="form-control" />
+            </div>           
+            <div class="form-group">
+                <label>phone: </label>
+                <input type="tel" name="phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnadd" class="btn btn-primary">Update Admin</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

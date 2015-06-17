@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "ViewAdmin";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>View all Admin</h2>
+        <label><a href="/Staff/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        @foreach (Practice1.Models.Admin ad in ViewBag.Admins)
+        {
+            <table>
+                <tr>
+                    <td><label><u>Name:</u> </label></td>
+                    <td><label> @ad.name</label></td>
+                </tr>
+                <tr>
+                    <td><label><u>password:</u> </label></td>
+                    <td><label> @ad.password</label></td>
+                </tr>
+               
+                <tr>
+                    <td><label><u>phone:</u> </label></td>
+                    <td><label> @ad.phone</label></td>
+                </tr>
+            </table>
+            <br /><br />
+        }
+    </div>
+</body>
+
+</html>

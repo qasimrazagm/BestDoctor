@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Update";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Update a Patient</h2>
+        <label><a href="/ Patient/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <form action="/ Patient/UpdatePatient" method="post" role="form">
+            <h3>Please provide the new Information and ID of the  Patient</h3>
+            <div class="form-group">
+                <label>PatientId: </label>
+                <input type="text" name="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>HospitalId: </label>
+                <input type="text" name="HospitalId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>DoctorId: </label>
+                <input type="text" name="DoctorId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>name: </label>
+                <input type="text" name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Password: </label>
+                <input type="password" name="Password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>gender: </label>
+                <input type="text" name="gender" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>age: </label>
+                <input type="text" name="age" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Diseas: </label>
+                <input type="text" name="diseas" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>City: </label>
+                <input type="text" name="city" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>District: </label>
+                <input type="text" name="district" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Country: </label>
+                <input type="text" name="country" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Adress: </label>
+                <input type="text" name="adress" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>email: </label>
+                <input type="text" name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Phone: </label>
+                <input type="tel" name="Phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>CommentAboutDoctors: </label>
+                <input type="tel" name="comment" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnadd" class="btn btn-primary">Update  Patient</button>
+            </div>
+        </form>
+        <h1>@ViewBag.Error</h1>
+    </div>
+</body>
+
+</html>

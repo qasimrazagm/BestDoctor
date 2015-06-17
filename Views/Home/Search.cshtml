@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+@using Practice1.Models;
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Best Doctors</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/Home/Index">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/About">About</a>
+                    </li>
+
+                    <li>
+                        <a href="/Home/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/Home/AreYouDoctor">AreYouDoctor</a>
+                    </li>
+                    <li>
+                        <a href="/Main/Index">LogOUt</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Search Best Doctors IN Pakistan</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+ 
+                <img src="~/Content/images/download.jpg" />
+            </div>
+        </div>
+        <div class="three-label-search inline-form box-search">
+            <h3>Search for Doctors in Pakistan</h3>
+
+            <form class="simple-form" method="POST"  action="/Home/SearchBest" >
+                <div class="form-inline">
+                    <div class="form-group">
+                        <!--  1 -->
+                        <label>Search By </label>
+                        <select class="form-control sm-field" name="dr">
+                            <option value="Doctor">Doctor</option>
+                            <option value="Hospital">Hospital</option>
+                        </select>
+                        <!--  2 -->
+                            <input type="text" name="name"   placeholder="Enter Name"  maxlength="70" autocomplete="off">
+                            
+
+     </div>
+                    <div class="form-group">
+                        <label>Speciality </label>
+                        <select class="form-control sm-field" name="Specialist">
+                            <!--  3 -->
+                            <option>Select speciality</option>
+                            @foreach (var d in Model)
+                            {
+                                <option value=@d > @d  </option> 
+                            }
+                            
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <!--  4 -->
+                        <input type="text" name="search"  placeholder="Enter City or Country or District"  maxlength="50" autocomplete="off">
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Search">
+                    </div>
+                </div>
+                
+            </form>
+
+            <div class="alphabet clear-fix">
+
+                <a href="/Home/SearchABC?STR=A" alt=" Records">A</a>
+                <a href="/Home/SearchABC?STR=B" alt=" Records">B</a>
+                <a href="/Home/SearchABC?STR=C" alt=" Records">C</a>
+                <a href="/Home/SearchABC?STR=D" alt=" Records">D</a>
+                <a href="/Home/SearchABC?STR=E" alt=" Records">E</a>
+                <a href="/Home/SearchABC?STR=F" alt=" Records">F</a>
+                <a href="/Home/SearchABC?STR=G" alt=" Records">G</a>
+                <a href="/Home/SearchABC?STR=H" alt=" Records">H</a>
+                <a href="/Home/SearchABC?STR=I" alt=" Records">I</a>
+                <a href="/Home/SearchABC?STR=J" alt=" Records">J</a>
+                <a href="/Home/SearchABC?STR=K" alt=" Records">K</a>
+                <a href="/Home/SearchABC?STR=L" alt=" Records">L</a>
+                <a href="/Home/SearchABC?STR=M" alt=" Records">M</a>
+                <a href="/Home/SearchABC?STR=N" alt=" Records">N</a>
+                <a href="/Home/SearchABC?STR=O" alt=" Records">O</a>
+                <a href="/Home/SearchABC?STR=P" alt=" Records">P</a>
+                <a href="/Home/SearchABC?STR=Q" alt=" Records">Q</a>
+                <a href="/Home/SearchABC?STR=R" alt=" Records">R</a>
+                <a href="/Home/SearchABC?STR=S" alt=" Records">S</a>
+                <a href="/Home/SearchABC?STR=T" alt=" Records">T</a>
+                <a href="/Home/SearchABC?STR=U" alt=" Records">U</a>
+                <a href="/Home/SearchABC?STR=V" alt=" Records">V</a>
+                <a href="/Home/SearchABC?STR=W" alt=" Records">W</a>
+                <a href="/Home/SearchABC?STR=X" alt=" Records">X</a>
+                <a href="/Home/SearchABC?STR=Y" alt=" Records">Y</a>
+                <a href="/Home/SearchABC?STR=Z" alt=" Records">Z</a>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Add";
+}
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>Add a Doctor</h2>
+        <label><a href="/Doctor/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <form action="/Doctor/AddDoctor" method="post" role="form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>HospitalID: </label>
+                <input type="text" name="HospitalId" class="form-control" />
+            </div>
+             <div class="form-group">
+                <label>Name: </label>
+                <input type="text" name="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>specialization: </label>
+                <input type="text" name="specialization" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>age: </label>
+                <input type="text" name="age" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>gender: </label>
+                <input type="text" name="gender" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Timing: </label>
+                <input type="text" name="timing" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>city: </label>
+                <input type="text" name="city" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>district: </label>
+                <input type="text" name="district" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>country: </label>
+                <input type="text" name="country" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>email: </label>
+                <input type="text" name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>phone: </label>
+                <input type="tel" name="phone" class="form-control" />
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon">Upload Image</span>
+                <div class="col-md-5">
+                    <input type="file" name="DPicture" />
+                </div>
+            </div>
+                <div class="form-group">
+                    <button type="submit" name="btnadd" class="btn btn-primary">Add Doctor</button>
+                </div>
+</form>
+    </div>
+</body>
+</html>

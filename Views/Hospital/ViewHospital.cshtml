@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "ViewHospital";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>View all Hospital</h2>
+        <label><a href="/Hospital/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>HospitalId</td>
+                    <td>HospitalName</td>
+                    <td>City</td>
+                    <td>District</td>
+                    <td>Country</td>
+                    <td>Timing</td>
+                    <td>Website</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>HPicture</td>
+                    <td>Spicture</td>
+                    <td>InnerPicture</td>
+                </tr>
+                </thead>
+            <tbody>
+                    
+                    @foreach (Practice1.Models.Hospital hos in ViewBag.Hospitals)
+                    {
+                            <tr class="alert-success">
+                                <td> @hos.Id</td>
+                                <td> @hos.name</td>
+                                <td> @hos.city</td>
+                                <td> @hos.district</td>
+                                <td> @hos.country</td>
+                                <td> @hos.timing</td>
+                                <td> @hos.email</td>
+                                <td> @hos.website</td>
+                                <td> @hos.phone</td>
+                                <td><img src="~/images/@hos.HPicture" width="100" height="100" /></td> 
+                                <td><img src="~/images/@hos.SPicture" width="100" height="100" /></td>
+                                <td><img src="~/images/@hos.IPicture" width="100" height="100" /></td>
+                            </tr>
+                        
+                    }
+        </tbody>
+     </table>
+    </div>
+</body>
+
+</html>

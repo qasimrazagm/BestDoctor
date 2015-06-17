@@ -1,0 +1,61 @@
+﻿@model Practice1.Models.Doctor
+           @using Practice1.Models
+@{
+    ViewBag.Title = "SearchDoctor";
+}
+
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2> Doctors</h2>
+        <label><a href="/Doctor/Index">Home page</a></label>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>DoctorId</td>
+                    <td>HospitalId</td>
+                    <td>DoctorName</td>
+                    <td>specialization</td>
+                    <td>age</td>
+                    <td>gender</td>
+                    <td>timing</td>
+                    <td>city</td>
+                    <td>country</td>
+                    <td>email</td>
+                    <td>phone</td>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr class=" alert-success">
+                        <td> @Model.Id</td>
+                        <td> @Model.HospitalId</td>
+                        <td> @Model.name</td>
+                        <td> @Model.specialization</td>
+                        <td> @Model.age</td>
+                        <td> @Model.gender</td>
+                        <td> @Model.timing</td>
+                        <td> @Model.city</td>
+                        <td> @Model.country</td>
+                        <td> @Model.email</td>
+                        <td> @Model.phone</td>
+                        <td><img src="/images/@Model.DPicture" width="100" height="100" /></td>
+
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
